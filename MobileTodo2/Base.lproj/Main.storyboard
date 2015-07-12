@@ -74,8 +74,16 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="FBP-vD-EJ4">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="T0f-BS-wEW"/>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="sto-JP-1rw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="T0f-BS-wEW">
+                            <connections>
+                                <action selector="doCancelToTodoViewController:" destination="fxu-6j-Mtr" id="wgq-Zo-uFS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="sto-JP-1rw">
+                            <connections>
+                                <action selector="doAddTodo:" destination="fxu-6j-Mtr" id="x5X-7Q-U38"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addTodoBarButton" destination="sto-JP-1rw" id="XL0-Y6-BWB"/>

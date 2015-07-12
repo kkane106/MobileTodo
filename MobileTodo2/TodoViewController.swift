@@ -57,7 +57,8 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showAddTodo" {
-            let destinationVC = segue.destinationViewController as! AddTodoModalViewController
+            let navController = segue.destinationViewController as! UINavigationController
+            let destinationVC = navController.viewControllers[0] as! AddTodoModalViewController
             destinationVC.todoDelegate = self
         }
     }
