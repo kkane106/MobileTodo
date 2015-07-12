@@ -9,3 +9,10 @@ target 'MobileTodo2Tests' do
 
 end
 
+platform :ios, '8.0'
+use_frameworks!
+
+target 'MobileTodo2' do
+pod 'SwiftyJSON', '~> 2.2.0'
+pod 'Alamofire', '~> 1.2'
+end
