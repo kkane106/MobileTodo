@@ -11,6 +11,7 @@ import UIKit
 protocol TodoDelegate {
     func addTodo(newTodo: Todo)
     func postTodoUpdates(newTodo: String)
+    func deleteTodo(deleteTodo: Todo)
 }
 
 class AddTodoModalViewController: UIViewController {
