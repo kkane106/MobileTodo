@@ -10,7 +10,7 @@ import UIKit
 
 protocol TodoDelegate {
     func addTodo(newTodo: Todo)
-    func postTodoUpdates()
+    func postTodoUpdates(newTodo: String)
 }
 
 class AddTodoModalViewController: UIViewController {
@@ -33,10 +33,7 @@ class AddTodoModalViewController: UIViewController {
     }
     
     @IBAction func doAddTodo(sender: UIBarButtonItem) {
-        //        // THIS ACTUALLY NEEDS TO SEND A NEW OBJECT TO BE SAVED ON DB, THEN THE RESPONSE WILL CREATE A NEW TODO OBJECT IN SWIFT WITH THE ID, FINALLY THE OBJECT WILL BE APPENDED TO THE ARRAY AND IT'S TEXT WILL BE DISPLAYED...OY VEY
-//        todoDelegate?.addTodo(todoTextField.text)
-        todoDelegate?.postTodoUpdates()
-//
+        todoDelegate?.postTodoUpdates(todoTextField.text)
         dismiss()
     }
     

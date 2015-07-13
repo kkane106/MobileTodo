@@ -15,6 +15,7 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var todoArray = [Todo]()
     let cellID = "cellID"
+    var response = String()
     
     @IBOutlet weak var todoTableView: UITableView!
     
@@ -61,37 +62,36 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getTodoUpdates() {
         Alamofire.request(.GET, "http://swift-sushi-json.herokuapp.com/todos.json").responseJSON() {
             (request, response, responseObject, error) in
-
-
-//            println("request: \(request)")
-            println("responseObject: \(responseObject)")
+//            println("responseObject: \(responseObject)")
             let json = JSON(responseObject!)
             if let todo = json["todos"].arrayObject {
                 for i in todo {
                     let todoMap = Mapper<Todo>().map(i)
                     self.todoArray.append(todoMap!)
                 }
+            } else {
+                println("ERROR")
             }
-//            println("responseObject: \(json)")
-//            println("error: \(error)")
-//            println("array: \(self.todoArray)")
             self.todoTableView.reloadData()
         }
     }
     
-    func postTodoUpdates() {
-    var parameters: [String: AnyObject] = ["todos": "success"]
+    func postTodoUpdates(newTodo: String) {
+        var parameters: [String: AnyObject] = ["todos": newTodo]
         Alamofire.request(.POST, "http://swift-sushi-json.herokuapp.com/login", parameters: parameters, encoding: .JSON).responseJSON {
             (request, response, responseObject, error) -> Void in
-
-            println("request: \(request)")
-            println("response: \(response)")
-            let json = JSON(responseObject!)
-            if let todo = json["todos"].string {
-                println("TODO:\(todo)")
+            if let responseObject: AnyObject = responseObject {
+                let json = JSON(responseObject)
+                if let todo = json["todo"].arrayObject {
+                    for i in todo {
+                        let todoMap = Mapper<Todo>().map(i)
+                        self.todoArray.append(todoMap!)
+                    }
+                }
+            } else {
+                println("ERROR")
             }
-            println("responseObject: \(responseObject)")
-            println("error: \(error)")
+            self.todoTableView.reloadData()
         }
     }
     
