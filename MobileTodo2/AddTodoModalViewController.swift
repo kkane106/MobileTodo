@@ -9,7 +9,8 @@
 import UIKit
 
 protocol TodoDelegate {
-    func addTodo(newTodo: String)
+    func addTodo(newTodo: Todo)
+    func postTodoUpdates()
 }
 
 class AddTodoModalViewController: UIViewController {
@@ -32,11 +33,10 @@ class AddTodoModalViewController: UIViewController {
     }
     
     @IBAction func doAddTodo(sender: UIBarButtonItem) {
-        println("pressed the button")
-        println("text field: \(todoTextField.text)")
-        println(todoDelegate)
-        todoDelegate?.addTodo(todoTextField.text)
-        println("todoDelegate: \(todoDelegate)")
+        //        // THIS ACTUALLY NEEDS TO SEND A NEW OBJECT TO BE SAVED ON DB, THEN THE RESPONSE WILL CREATE A NEW TODO OBJECT IN SWIFT WITH THE ID, FINALLY THE OBJECT WILL BE APPENDED TO THE ARRAY AND IT'S TEXT WILL BE DISPLAYED...OY VEY
+//        todoDelegate?.addTodo(todoTextField.text)
+        todoDelegate?.postTodoUpdates()
+//
         dismiss()
     }
     

@@ -99,8 +99,8 @@
 			children = (
 				3CDEA7E51B5221E500A80B67 /* AppDelegate.swift */,
 				3CDEA8051B5223AE00A80B67 /* TodoViewController.swift */,
-				3CDEA8071B5223B800A80B67 /* Todo.swift */,
 				3CDEA8091B5223BD00A80B67 /* AddTodoModalViewController.swift */,
+				3CDEA8071B5223B800A80B67 /* Todo.swift */,
 				3CDEA7E91B5221E500A80B67 /* Main.storyboard */,
 				3CDEA7EC1B5221E500A80B67 /* Images.xcassets */,
 				3CDEA7EE1B5221E500A80B67 /* LaunchScreen.xib */,

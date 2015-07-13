@@ -15,4 +15,5 @@ use_frameworks!
 target 'MobileTodo2' do
 pod 'SwiftyJSON', '~> 2.2.0'
 pod 'Alamofire', '~> 1.2'
+pod 'AlamofireObjectMapper', '~> 0.2'
 end

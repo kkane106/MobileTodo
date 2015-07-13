@@ -27,6 +27,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NPY-EM-XUj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="vYc-Wj-QMR">
+                            <connections>
+                                <action selector="doRefreshTodos:" destination="vXZ-lx-hvc" id="Cfx-1j-5kn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="iHM-Ii-K2y">
                             <connections>
                                 <segue destination="189-AZ-q7p" kind="presentation" identifier="showAddTodo" id="7wJ-jj-PSS"/>

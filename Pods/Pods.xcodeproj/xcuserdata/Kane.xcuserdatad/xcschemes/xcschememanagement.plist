@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MobileTodo2-AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MobileTodo2-ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MobileTodo2-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A0C6798DFD0AF08264C105A1</key>
+		<key>1EFC74180B461E6CD0CE8DC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B317D2E4832F701ADDF6DA95</key>
+		<key>C593BE27C753AA52423BA583</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA77E6D7C5F136A216F1D701</key>
+		<key>D0483744A3F6F0A52055B810</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE50738682EB4C782D39F58D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA1F79C1469CC75D788E035F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,10 +9,11 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import ObjectMapper
 
 class TodoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TodoDelegate {
     
-    var todoArray = [String]()
+    var todoArray = [Todo]()
     let cellID = "cellID"
     
     @IBOutlet weak var todoTableView: UITableView!
@@ -25,21 +26,13 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         todoTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
-        Alamofire.request(.GET, "http://swift-sushi-json.herokuapp.com/sushi.json").responseJSON() {
-            (_, _, data, _) in
-            let json = JSON(data!)
-            if let todo = json["sushi"].arrayObject {
-                for i in todo {
-                    self.todoArray.append(String(i as! NSString))
-                }
-            }
-            self.todoTableView.reloadData()
-        }
+        getTodoUpdates()
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID) as! UITableViewCell
-        cell.textLabel?.text = "\(todoArray[indexPath.row])"
+        cell.textLabel?.text = "\(todoArray[indexPath.row].todoText!)"
         
         return cell
     }
@@ -48,11 +41,13 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
         return todoArray.count
     }
     
-    func addTodo(newTodo: String) {
+    func addTodo(newTodo: Todo) {
         todoArray.append(newTodo)
-        println("before: \(todoArray)")
         todoTableView.reloadData()
-        println("after: \(todoArray)")
+    }
+    @IBAction func doRefreshTodos(sender: UIBarButtonItem) {
+        todoArray = []
+        getTodoUpdates()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -62,4 +57,42 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
             destinationVC.todoDelegate = self
         }
     }
+    
+    func getTodoUpdates() {
+        Alamofire.request(.GET, "http://swift-sushi-json.herokuapp.com/todos.json").responseJSON() {
+            (request, response, responseObject, error) in
+
+
+//            println("request: \(request)")
+            println("responseObject: \(responseObject)")
+            let json = JSON(responseObject!)
+            if let todo = json["todos"].arrayObject {
+                for i in todo {
+                    let todoMap = Mapper<Todo>().map(i)
+                    self.todoArray.append(todoMap!)
+                }
+            }
+//            println("responseObject: \(json)")
+//            println("error: \(error)")
+//            println("array: \(self.todoArray)")
+            self.todoTableView.reloadData()
+        }
+    }
+    
+    func postTodoUpdates() {
+    var parameters: [String: AnyObject] = ["todos": "success"]
+        Alamofire.request(.POST, "http://swift-sushi-json.herokuapp.com/login", parameters: parameters, encoding: .JSON).responseJSON {
+            (request, response, responseObject, error) -> Void in
+
+            println("request: \(request)")
+            println("response: \(response)")
+            let json = JSON(responseObject!)
+            if let todo = json["todos"].string {
+                println("TODO:\(todo)")
+            }
+            println("responseObject: \(responseObject)")
+            println("error: \(error)")
+        }
+    }
+    
 }

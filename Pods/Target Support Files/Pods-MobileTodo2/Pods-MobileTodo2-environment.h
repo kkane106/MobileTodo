@@ -12,6 +12,18 @@
 #define COCOAPODS_VERSION_MINOR_Alamofire 2
 #define COCOAPODS_VERSION_PATCH_Alamofire 3
 
+// AlamofireObjectMapper
+#define COCOAPODS_POD_AVAILABLE_AlamofireObjectMapper
+#define COCOAPODS_VERSION_MAJOR_AlamofireObjectMapper 0
+#define COCOAPODS_VERSION_MINOR_AlamofireObjectMapper 2
+#define COCOAPODS_VERSION_PATCH_AlamofireObjectMapper 0
+
+// ObjectMapper
+#define COCOAPODS_POD_AVAILABLE_ObjectMapper
+#define COCOAPODS_VERSION_MAJOR_ObjectMapper 0
+#define COCOAPODS_VERSION_MINOR_ObjectMapper 12
+#define COCOAPODS_VERSION_PATCH_ObjectMapper 0
+
 // SwiftyJSON
 #define COCOAPODS_POD_AVAILABLE_SwiftyJSON
 #define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2

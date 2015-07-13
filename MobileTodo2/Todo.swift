@@ -7,12 +7,40 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Todo {
-    var todoText: String?
+class TodoResponse: Mappable {
+    var todosArray: [Todo]?
     
-    init(todoText: String) {
+    init() {}
+    
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+    
+    func mapping(map: Map) {
+        todosArray  <- map["todos"]
+    }
+}
+
+class Todo: Mappable {
+    var todoText: String?
+    var todoID: Int?
+    
+    init(todoText: String, todoID: Int) {
         self.todoText = todoText
+        self.todoID = todoID
         
+    }
+    
+    // Mapable Protocol --> Required
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+    
+    // Mapable Protocol --> Required
+    func mapping(map: Map) {
+        todoText    <- map["text"]
+        todoID      <- map["id"]
     }
 }
