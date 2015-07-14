@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x17-H6-6NJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Todo View Controller-->
@@ -19,12 +20,37 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="F6I-xN-lEA">
                                 <rect key="frame" x="81" y="80" width="300" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="80" width="300" height="500"/>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F6I-xN-lEA" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="2BN-Mv-MF5"/>
+                            <constraint firstAttribute="centerY" secondItem="F6I-xN-lEA" secondAttribute="centerY" constant="-30" id="7Lb-wG-bZ3"/>
+                            <constraint firstAttribute="centerX" secondItem="F6I-xN-lEA" secondAttribute="centerX" id="afD-jC-VCu"/>
+                            <constraint firstItem="F6I-xN-lEA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="c0m-qU-aBL"/>
+                            <constraint firstItem="F6I-xN-lEA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="cgo-eV-aHJ"/>
+                            <constraint firstItem="F6I-xN-lEA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="vn0-aO-J5p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2BN-Mv-MF5"/>
+                                <exclude reference="7Lb-wG-bZ3"/>
+                                <exclude reference="afD-jC-VCu"/>
+                                <exclude reference="c0m-qU-aBL"/>
+                                <exclude reference="cgo-eV-aHJ"/>
+                                <exclude reference="vn0-aO-J5p"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="2BN-Mv-MF5"/>
+                                <include reference="7Lb-wG-bZ3"/>
+                                <include reference="afD-jC-VCu"/>
+                                <include reference="c0m-qU-aBL"/>
+                                <include reference="cgo-eV-aHJ"/>
+                                <exclude reference="vn0-aO-J5p"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="NPY-EM-XUj">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="vYc-Wj-QMR">
@@ -55,26 +81,39 @@
                         <viewControllerLayoutGuide type="bottom" id="osw-vE-bB1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pxw-Cf-Alf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoX-A8-xhp">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="125" width="300" height="30"/>
-                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BoX-A8-xhp" firstAttribute="trailing" secondItem="Pxw-Cf-Alf" secondAttribute="trailingMargin" id="N03-TK-Uyg"/>
+                            <constraint firstItem="BoX-A8-xhp" firstAttribute="top" secondItem="mdo-6S-S5d" secondAttribute="bottom" constant="91" id="OBH-Ha-OLZ"/>
+                            <constraint firstItem="BoX-A8-xhp" firstAttribute="leading" secondItem="Pxw-Cf-Alf" secondAttribute="leadingMargin" id="igc-rL-KWo"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="BoX-A8-xhp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="N03-TK-Uyg"/>
+                                <exclude reference="OBH-Ha-OLZ"/>
+                                <exclude reference="igc-rL-KWo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="BoX-A8-xhp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="N03-TK-Uyg"/>
+                                <include reference="OBH-Ha-OLZ"/>
+                                <include reference="igc-rL-KWo"/>
                             </mask>
                         </variation>
                     </view>

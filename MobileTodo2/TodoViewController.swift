@@ -135,4 +135,10 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func createErrorLabel() {
+        let errorLabel = UILabel()
+        errorLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+    }
+    
 }
