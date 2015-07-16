@@ -76,7 +76,7 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
         Alamofire.request(
                             .GET,
                             "http://swift-sushi-json.herokuapp.com/todos.json"
-                            ).responseJSON() {
+            ).responseJSON() {
             (request, response, responseObject, error) in
             let json = JSON(responseObject!)
             if let todo = json["todos"].arrayObject {
@@ -97,7 +97,8 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
                             .POST,
                             "http://swift-sushi-json.herokuapp.com/create_todo",
                             parameters: parameters,
-                            encoding: .JSON).responseJSON {
+                            encoding: .JSON
+            ).responseJSON {
             (request, response, responseObject, error) -> Void in
             if let responseObject: AnyObject = responseObject {
                 let json = JSON(responseObject)
@@ -121,8 +122,7 @@ class TodoViewController: UIViewController, UITableViewDelegate, UITableViewData
                             "http://swift-sushi-json.herokuapp.com/delete_todo",
                             parameters: parameters,
                             encoding: .JSON
-                            ).responseJSON {
-                                
+            ).responseJSON {
             (request, response, responseObject, error) -> Void in
             if let responseObject: AnyObject = responseObject {
                 let json = JSON(responseObject)

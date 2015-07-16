@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5BCAE4F0-7ED3-45FD-8FA7-C552E9D433A2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MobileTodo2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F9EA0BC7C95CA2CF0CF8994DF0B6455D674B294E</key>
+		<string>https://github.com/kkane106/MobileTodo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MobileTodo2.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F9EA0BC7C95CA2CF0CF8994DF0B6455D674B294E</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kkane106/MobileTodo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F9EA0BC7C95CA2CF0CF8994DF0B6455D674B294E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F9EA0BC7C95CA2CF0CF8994DF0B6455D674B294E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MobileTodo2</string>
+		</dict>
+	</array>
+</dict>
+</plist>
